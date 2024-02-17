@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+description = 'environments simulated in MuJoCo'
+name = "mj_envs"
+version = "1.0.0+pkgfix"
+readme = 'README.md'
+authors = [{ name = 'Movement Control Lab, UW' }]
+maintainers = [
+    { name = 'Yicheng Luo', email = 'ethanluoyc@gmail.com' }
+]
+requires-python = ">3"
+
+dependencies = [
+    'click',
+    'gym>=0.21.0,<0.24.0',
+    'mujoco-py<2.2,>=2.1',
+    'Cython<3',
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [".git", ".gitignore"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"dependencies/Adroit" = "mj_envs/hand_manipulation_suite/assets/Adroit"

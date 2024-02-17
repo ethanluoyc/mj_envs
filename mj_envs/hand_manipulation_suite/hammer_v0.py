@@ -1,6 +1,6 @@
 import numpy as np
 from gym import utils
-from mjrl.envs import mujoco_env
+from mj_envs.hand_manipulation_suite import mujoco_env
 from mujoco_py import MjViewer
 from mj_envs.utils.quatmath import *
 import os
